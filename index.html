@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uren Registratie</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Uren Registratie</h1>
+    <form id="urenForm">
+        <label for="datum">Datum:</label>
+        <input type="date" id="datum" required>
+        <label for="uren">Uren gewerkt:</label>
+        <input type="number" id="uren" step="0.1" min="0" required>
+        <label for="beschrijving">Beschrijving:</label>
+        <textarea id="beschrijving" rows="3" required></textarea>
+        <button type="submit">Opslaan</button>
+    </form>
+    <h2>Gegevens</h2>
+    <div id="totaalUren">Totaal uren: 0</div>
+    <div id="minimumUren">Minimale uren: 640</div>
+    <div id="urenOver">Uren nog te gaan: 640</div>
+    <div class="table-container">
+        <table id="urenTable">
+            <thead>
+                <tr>
+                    <th>Datum</th>
+                    <th>Uren gewerkt</th>
+                    <th>Beschrijving</th>
+                    <th>Acties</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Uren worden hier toegevoegd -->
+            </tbody>
+        </table>
+    </div>
+    <div id="pagination">
+        <button id="prevPage" disabled>Vorige</button>
+        <span id="pageInfo">Pagina 1</span>
+        <button id="nextPage">Volgende</button>
+    </div>
+    <h2>Grafiek</h2>
+    <div style="width: 100%; max-width: 600px; margin: 0 auto;">
+        <canvas id="urenChart"></canvas>
+    </div>
+    <div id="importExport">
+        <button id="exportData">Exporteer Gegevens</button>
+        <input type="file" id="importFile" accept=".json" style="display:none;">
+        <button id="importData">Importeer Gegevens</button>
+    </div>
+
+    <!-- Edit Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeEditModal">&times;</span>
+            <h2>Record Aanpassen</h2>
+            <form id="editForm">
+                <label for="editDatum">Datum:</label>
+                <input type="date" id="editDatum" required>
+                <label for="editUren">Uren gewerkt:</label>
+                <input type="number" id="editUren" step="0.1" min="0" required>
+                <label for="editBeschrijving">Beschrijving:</label>
+                <textarea id="editBeschrijving" rows="3" required></textarea>
+                <button type="submit">Opslaan</button>
+            </form>
+        </div>
+    </div>
+
+  <!-- Delete Modal -->
+    <div id="deleteModal" class="modal">
+     <div class="modal-content">
+        <span class="close" id="closeDeleteModal">&times;</span>
+        <h2>Weet je zeker dat je dit wilt verwijderen?</h2>
+        <p id="deleteDetails"></p>
+        <button id="confirmDelete">Verwijderen</button>
+        <button id="cancelDelete">Annuleren</button>
+     </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

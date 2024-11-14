@@ -63,10 +63,6 @@ Bijdragen aan dit project zijn welkom! Voel je vrij om een pull request in te di
 
 Dit project is gelicentieerd onder de MIT Licentie. Zie [LICENSE](LICENSE) voor meer informatie.
 
-## Contact
-
-Voor vragen of opmerkingen kun je contact opnemen met [jouw e-mail](mailto:jouw-email@example.com).
-
 ---
 
 **Veel plezier met het bijhouden van je stage-uren!**
